@@ -85,13 +85,15 @@ function init() {
       // Hint: Get the the top 10 otu_ids and map them in descending order  
       //  so the otu_ids with the most bacteria are last. 
   
-      var yticks = otu_ids.slice(0,10);
+      var top_otu= otu_ids.slice(0,10);
+      var yticks = top_otu.map(d => "OTU" + d);
       console.log(yticks);
       var xticks = otu_values.slice(0,10).reverse();
 
   
       var barData = [{
         x: xticks,
+        y: yticks,
         type: "bar",
         orientation: 'h'
   
